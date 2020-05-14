@@ -1,0 +1,45 @@
+{
+  "name": "currency-ranker",
+  "version": "1.0.0",
+  "description": "Rank currecny values",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "test:watch": "jest --config jestconfig.json --watch",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tshradheya/currency-ranker.git"
+  },
+  "keywords": [],
+  "author": "Shradheya Thakre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tshradheya/currency-ranker/issues"
+  },
+  "homepage": "https://github.com/tshradheya/currency-ranker#readme",
+  "devDependencies": {
+    "@types/jest": "^25.2.2",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^25.5.1",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
