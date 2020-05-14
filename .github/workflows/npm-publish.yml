@@ -11,9 +11,9 @@ jobs:
         steps:
         - uses: actions/checkout@v1
         - uses: actions/setup-node@v1
-            with:
-                node-version: 12
-                registry-url: https://registry.npmjs.org/
+          with:
+            node-version: 12
+            registry-url: https://registry.npmjs.org/
         - run: npm install
         - run: npm run build
         - run: npm run lint
@@ -26,13 +26,13 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
-                with:
-                    node-version: 12
-                    registry-url: https://registry.npmjs.org/
+              with:
+                node-version: 12
+                registry-url: https://registry.npmjs.org/
             - run: npm install
             - run: npm run build
             - run: npm run lint
             - run: npm test
             - run: npm publish --access public
-                env:
-                    NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+              env:
+                NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
