@@ -8,7 +8,6 @@ const EXCHANGE_RATE_API = 'https://api.exchangeratesapi.io';
  * @returns [] in sorted order
  */
 export const rankCurrencies = async (currencies: string[]) => {
-
   const setOfUniqueCurrencies = new Set<string>();
 
   for (const curr of currencies) {
@@ -18,14 +17,17 @@ export const rankCurrencies = async (currencies: string[]) => {
 
   const rates: Record<string, number> = await getAllRatesWithUSD(setOfUniqueCurrencies);
 
-  const currValuestoSort = []
+  const currValuestoSort = [];
   for (const curr of currencies) {
     const res = curr.split(' ');
-    currValuestoSort.push([curr, parseFloat(res[0]) * (1 / rates[res[1]])])
+    currValuestoSort.push([curr, parseFloat(res[0]) * (1 / rates[res[1]])]);
   }
 
-  return currValuestoSort.sort((a: any, b: any) => { return a[1] - b[1] }).map(val => val[0])
-
+  return currValuestoSort
+    .sort((a: any, b: any) => {
+      return a[1] - b[1];
+    })
+    .map((val) => val[0]);
 };
 
 export const convertCurrency = async (value: number, fromCurrency: string, toCurrency: string): Promise<number> => {
@@ -33,10 +35,10 @@ export const convertCurrency = async (value: number, fromCurrency: string, toCur
     params: {
       base: fromCurrency,
       symbols: toCurrency,
-    }
+    },
   });
   return value * result.data.rates[toCurrency];
-}
+};
 
 const getAllRatesWithUSD = async (uniqueCurrencies: Set<string>): Promise<Record<string, number>> => {
   const currencies = Array.from(uniqueCurrencies);
@@ -45,9 +47,8 @@ const getAllRatesWithUSD = async (uniqueCurrencies: Set<string>): Promise<Record
     params: {
       base: 'USD',
       symbols: formattedCurrencies,
-    }
-  })
+    },
+  });
 
   return response.data.rates;
-
-}
+};

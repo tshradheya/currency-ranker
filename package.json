@@ -1,6 +1,6 @@
 {
   "name": "@tshradheya/currency-ranker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rank currecny values",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/tshradheya/currency-ranker#readme",
   "publishConfig": {
-     "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "@types/jest": "^25.2.2",
