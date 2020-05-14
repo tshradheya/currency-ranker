@@ -16,6 +16,11 @@ Small Library to rank money in different currencies or just to get the value in 
     // [ '0.5 EUR', '1.3 SGD', '100 INR' ]
 ```
 
+## Tests
+
+`npm run test`
+
+You can also run in watch mode while developing `npm run test:watch`
 
 
 
