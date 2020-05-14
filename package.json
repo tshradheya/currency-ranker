@@ -1,5 +1,5 @@
 {
-  "name": "currency-ranker",
+  "name": "@tshradheya/currency-ranker",
   "version": "1.0.0",
   "description": "Rank currecny values",
   "main": "lib/index.js",

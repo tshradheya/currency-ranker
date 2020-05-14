@@ -8,11 +8,11 @@ Small Library to rank money in different currencies or just to get the value in 
 
 ## Usage
 ```ts
-    import CurrencyRanker from 'currency-ranker;
+    import { rankCurrencies } from '@tshradheya/currency-ranker';
 
     const currenciesToRank = ['100 INR', '1.3 SGD', '0.5 EUR'];
 
-    const res = await CurrencyRanker.rankCurrencies(currenciesToRank);
+    const res = await rankCurrencies(currenciesToRank);
     // [ '0.5 EUR', '1.3 SGD', '100 INR' ]
 ```
 
