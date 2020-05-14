@@ -30,6 +30,9 @@
     "url": "https://github.com/tshradheya/currency-ranker/issues"
   },
   "homepage": "https://github.com/tshradheya/currency-ranker#readme",
+  "publishConfig": {
+     "registry": "https://npm.pkg.github.com/"
+  },
   "devDependencies": {
     "@types/jest": "^25.2.2",
     "jest": "^26.0.1",
